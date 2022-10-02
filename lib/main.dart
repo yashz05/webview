@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webview/config.dart';
 import 'package:webview/webview.dart';
 
 void main() {
@@ -13,7 +14,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      // color: Colors.amber,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: Color(int.parse(config.primary)),
+          secondary: const Color(0xFFFFC107),
+        ),
+      ),
       home: webvi(),
     );
   }
